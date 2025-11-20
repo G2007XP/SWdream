@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWdream</title>
+    
+    <style>
+        /* التنسيقات العامة */
+        body {
+            direction: rtl; 
+            text-align: right;
+            font-family: 'Arial', sans-serif; 
+            margin: 0;
+            padding: 0;
+            color: #fff; /* النص باللون الأبيض ليتناسب مع الخلفية الداكنة */
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative; 
+            /* المفتاح: يجب أن يكون للـ body ارتفاع لتغطية الشاشة */
+            min-height: 100vh; 
+        }
+
+        /* تنسيق حاوية الجسيمات */
+        #particles-js {
+            position: fixed; /* استخدام fixed لضمان تغطية كاملة وثابتة */
+            width: 100%;
+            height: 100%;
+            background-color: #1a2a4b; /* لون الخلفية الداكن */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index: -1; /* وضعها خلف كل المحتوى */
+            top: 0;
+            left: 0;
+        }
+
+        /* تنسيق قسم البطل (Hero Section) */
+        .hero-section {
+            position: relative; 
+            z-index: 1; /* وضعها فوق الجسيمات */
+            background: transparent; /* خلفية شفافة لرؤية الجسيمات */
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.2em; 
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* ظل للنص ليكون أوضح */
+        }
+
+        .hero-section p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        /* تنسيق زر الواتساب */
+        .cta-button {
+            display: inline-block;
+            background-color: #25D366; 
+            color: white;
+            padding: 18px 40px; 
+            text-decoration: none;
+            border-radius: 10px; 
+            font-size: 1.5em; 
+            font-weight: bold;
+            transition: all 0.3s ease; 
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+            border: 2px solid #20c25a; 
+        }
+
+        .cta-button:hover {
+            background-color: #1DA851; 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header class="hero-section">
+        <h1>صمم موقعك الاحترافي، وابدأ مبيعاتك الآن! 🚀</h1>
+        <p>نحن نحول أفكارك إلى مواقع ويب مُحسّنة وجاهزة للعمل والتسويق.</p>
+        <a href="#" class="cta-button" id="whatsapp-link">
+            اطلب استشارة مجانية الآن عبر الواتساب 📲
+        </a>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <script>
+        // إعدادات particles.js المباشرة
+        particlesJS('particles-js', {
+          "particles": {
+            "number": {
+              "value": 80, 
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#ffffff" 
+            },
+            "shape": {
+              "type": "circle", 
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+            },
+            "opacity": {
+              "value": 0.5, 
+              "random": false,
+            },
+            "size": {
+              "value": 3, 
+              "random": true,
+            },
+            "line_linked": {
+              "enable": true, 
+              "distance": 150, 
+              "color": "#ffffff", 
+              "opacity": 0.4, 
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 6, 
+              "direction": "none",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true, 
+                "mode": "grab" 
+              },
+              "onclick": {
+                "enable": true, 
+                "mode": "push" 
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 140,
+                "line_linked": {
+                  "opacity": 1
+                }
+              },
+              "push": {
+                "particles_nb": 4
+              },
+            }
+          },
+          "retina_detect": true
+        });
+    </script>
+    
+    <script>
+        // رابط الواتساب مع رسالة مخصصة
+        document.getElementById('whatsapp-link').href = 
+            "https://wa.me/212699230061?text="+
+            encodeURIComponent('مرحبًا! أرغب في الحصول على استشارة مجانية لتصميم موقع ويب.');
+    </script>
+</body>
+</html>
